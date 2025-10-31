@@ -1,11 +1,23 @@
 import React from 'react'
-import WeatherCard from './components/WeatherCard'
+import { Routes, Route } from 'react-router-dom'
+import HomePage from './components/HomePage'
+import SearchPage from './components/SearchPage'
+import NotFound from './components/NotFound'
+import SplashScreen from './components/SplashScreen'
+import BottomNav from './components/ui/BottomNav'
+
 
 const App = () => {
   return (
-    <div>
-      <WeatherCard />
-    </div>
+    <>
+    <Routes>
+      <Route path='/' element={<SplashScreen />} />
+      <Route path='/search' element={<SearchPage />} />
+      <Route path='/home' element={<HomePage />} />
+      <Route path='*' element={<NotFound />} />
+    </Routes>
+    <BottomNav />
+    </>
   )
 }
 
