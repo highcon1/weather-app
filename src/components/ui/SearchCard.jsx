@@ -1,8 +1,8 @@
 import React from 'react'
 
-const SearchCard = ({icon, name, temp, text}) => {
+const SearchCard = ({icon, name, temp, text, func}) => {
   return (
-    <div className="flex items-center justify-between px-4 w-full rounded-lg text-white h-20 bg-[#202B3B] mt-4">
+    <div onClick={func} className="flex items-center justify-between px-4 w-full rounded-lg text-white h-20 bg-[#202B3B] mt-4">
         <span className='flex items-center justify-center gap-3'>
             <img src={icon} alt="" />
             <span>
