@@ -1,1 +1,5 @@
 @import "tailwindcss";
+
+.focusNot:not(:placeholder-shown) {
+    background-color: #202B3B;
+}
