@@ -17,7 +17,9 @@ const SearchPage = () => {
 
 
     const handleSearch = async () => {
-        const url = `https://api.weatherapi.com/v1/forecast.json?q=${city}&days=4&hour=24&key=1fc548ba68a042d0aa792045253010`
+        const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
+
+        const url = `https://api.weatherapi.com/v1/forecast.json?q=${city}&days=4&hour=24&key=${apiKey}`
 
         try {
 
@@ -84,7 +86,7 @@ const SearchPage = () => {
 
         { existingData.length > 0 && (
           existingData.map((data, index) => (
-            <SearchCard key={index} icon={data.currentIcon} name={data.location} temp={data.currentTemp} text={data.currentCondition} />
+            <SearchCard key={index} icon={data.currentIcon} name={data.location} temp={data.currentTemp} text={data.currentCondition} func = {() => navigate('/home', { state: { weatherData: data }})} />
           )
         ))}
     </div>
